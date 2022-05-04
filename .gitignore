@@ -1,0 +1,5 @@
+#Configurações do eclipse
+.settings
+
+#Arquivos da lixeira
+bin/
