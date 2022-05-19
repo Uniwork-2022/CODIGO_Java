@@ -13,11 +13,10 @@ public class Candidato extends Conta{
 	
 	
 	//Construtor
-	public Candidato(String login, String pwd, String email, long celular, int idade, String cpf) {
-		super(login, pwd, email, celular);
+	public Candidato(long id, String login, String pwd, String email, String celular, int idade, String cpf) {
+		super(id, login, pwd, email, celular);
 		this.setIdade(idade);
 		this.setCpf(cpf);
-		
 	}
 	
 	

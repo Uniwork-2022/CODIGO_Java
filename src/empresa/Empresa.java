@@ -11,8 +11,8 @@ public class Empresa extends Conta{
 	
 	
 	//Construtor
-	public Empresa(String login, String pwd, String email, long cel, long cnpj) {
-		super(login, pwd, email, cel);
+	public Empresa(long id, String login, String pwd, String email, String cel, long cnpj) {
+		super(id, login, pwd, email, cel);
 		this.setCnpj(cnpj);
 	}
 	
