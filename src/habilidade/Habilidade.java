@@ -2,7 +2,7 @@ package habilidade;
 
 public class Habilidade {
 	
-	private int id;
+	private long id;
 	private String nome;
 	private String descricao;
 	private String tipo;
@@ -18,11 +18,11 @@ public class Habilidade {
 	
 	
 	//Getters e Setters
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
