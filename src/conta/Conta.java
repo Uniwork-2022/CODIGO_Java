@@ -6,13 +6,14 @@ public abstract class Conta {
 	private String login;
 	private String pwd;
 	private String email;
-	private long celular;
+	private String celular;
 	private boolean statusEmail;
 	private boolean status;
 	
 	
 	//Construtor parâmetrizado
-	public Conta(String login, String pwd, String email, long cel) {
+	public Conta(long id, String login, String pwd, String email, String cel) {
+		this.setId(id);
 		this.setLogin(login);
 		this.setPwd(pwd);
 		this.setEmail(email);
@@ -70,7 +71,7 @@ public abstract class Conta {
 		
 		boolean verificado = false;
 		
-		if(this.getLogin() == login) {
+		if(this.getLogin() == login && this.getPwd() == pwd) {
 			verificado = true;
 		}	else {
 			verificado = false;
@@ -139,12 +140,12 @@ public abstract class Conta {
 	}
 
 
-	public long getCelular() {
+	public String getCelular() {
 		return celular;
 	}
 
 
-	public void setCelular(long celular) {
+	public void setCelular(String celular) {
 		this.celular = celular;
 	}
 
