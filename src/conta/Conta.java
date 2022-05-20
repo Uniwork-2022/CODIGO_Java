@@ -2,7 +2,7 @@ package conta;
 
 public abstract class Conta {
 	
-	private long id;
+	private int id;
 	private String login;
 	private String pwd;
 	private String email;
@@ -12,7 +12,7 @@ public abstract class Conta {
 	
 	
 	//Construtor parâmetrizado
-	public Conta(long id, String login, String pwd, String email, String cel) {
+	public Conta(int id, String login, String pwd, String email, String cel) {
 		this.setId(id);
 		this.setLogin(login);
 		this.setPwd(pwd);
@@ -66,7 +66,7 @@ public abstract class Conta {
 	};
 	
 	
-	//Login e Logout
+	//Login e Logout - Movido para LoginSystem (retirar)
 	public boolean login(String login, String pwd) {
 		
 		boolean verificado = false;
@@ -95,7 +95,7 @@ public abstract class Conta {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
