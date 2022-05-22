@@ -1,4 +1,4 @@
-package habilidade;
+package projeto;
 
 public class Habilidade {
 	
@@ -18,7 +18,7 @@ public class Habilidade {
 	
 	
 	//Getters e Setters
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 

@@ -1,4 +1,4 @@
-package curriculo;
+package projeto;
 
 import java.util.ArrayList;
 
@@ -17,19 +17,6 @@ public class Curriculo{
 	public void addHabilidade(int idHabilidade) {
 		this.getHabilidades().add(idHabilidade);
 	}
-	
-	
-	//Verifica a existência da habilidade
-	public boolean verifica(int idHabilidade) {
-		boolean verificado = false;
-		for(int element : this.getHabilidades()) {
-			if(idHabilidade == element) {
-				verificado = true;
-			}
-		}
-		return verificado;
-	}
-	
 	
 	//Getters e Setters
 	public ArrayList<Integer> getHabilidades() {
