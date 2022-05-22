@@ -1,7 +1,8 @@
-package conta;
+package projeto;
 
 public abstract class Conta {
 	
+	private String nome;
 	private int id;
 	private String login;
 	private String pwd;
@@ -12,7 +13,8 @@ public abstract class Conta {
 	
 	
 	//Construtor parâmetrizado
-	public Conta(int id, String login, String pwd, String email, String cel) {
+	public Conta(String nome, int id, String login, String pwd, String email, String cel) {
+		this.setNome(nome);
 		this.setId(id);
 		this.setLogin(login);
 		this.setPwd(pwd);
@@ -42,11 +44,13 @@ public abstract class Conta {
 	public void fecharConta(String login, String pwd) {
 		if(this.getLogin() == login && this.getPwd() == pwd){
 			this.setStatus(false);
+		}	else {
+			System.out.println("Credenciais inválidas");
 		}
 	}
 	
 	
-	//Alteração de senha
+	//Alteração e reset de senha
 	public void resetSenha() {
 		if(this.isStatus()) {
 			this.setPwd("Padrao");
@@ -66,32 +70,10 @@ public abstract class Conta {
 	};
 	
 	
-	//Login e Logout - Movido para LoginSystem (retirar)
-	public boolean login(String login, String pwd) {
-		
-		boolean verificado = false;
-		
-		if(this.getLogin() == login && this.getPwd() == pwd) {
-			verificado = true;
-		}	else {
-			verificado = false;
-		}
-		
-		return verificado;
-	}
-	
-	public boolean logout() {
-		return true;
-	}
-	
-	
 	//Getters e Setters
-	public void getStatusConta() {
-		System.out.println("Login: " + this.getLogin() + "    " + "Senha: " + this.getPwd() + "\n" + "idConta: " + this.getId() + 
-				"    " + "Email: " + this.getEmail() + "\n" + "Status: " + (this.isStatus() ? "Ativa" : "Desativada" ));
-	}
+	public abstract void getStatusConta();
 	
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
@@ -147,6 +129,16 @@ public abstract class Conta {
 
 	public void setCelular(String celular) {
 		this.celular = celular;
+	}
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 }
