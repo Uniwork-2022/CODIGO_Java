@@ -1,5 +1,6 @@
-package projeto;
+package br.uniwork.controller;
 /**
+ * Classe que abstrai candidatos do sistema.
  * @author mateus-cabral
  * @version 1.0
  */
@@ -7,14 +8,34 @@ package projeto;
 import java.util.Date;
 
 public class Candidato extends Conta{
-	
+	/**
+	 * Idade do candidato
+	 */
 	private int idade;
+	
+	/**
+	 * Cpf do candidato
+	 */
 	private String cpf;
+	
+	/**
+	 * Gênero do candidato
+	 */
 	private String genero;
+	
+	/**
+	 * Data de nascimento
+	 */
 	private Date dataNasc;
 	
 	
-	//Construtor
+	/**
+	 * Construtor vazio
+	 */
+	public Candidato() {
+		
+	}
+	
 	/**
 	 * Construtor parâmetrizado
 	 * @param nome nome do candidato
@@ -45,43 +66,72 @@ public class Candidato extends Conta{
 				"CPF: " + this.getCpf() + "\n" + 
 				"Status: " + (this.isStatus() ? "Ativa" : "Desativada") + "\n" +
 				"Status Email: " + (this.isStatusEmail() ? "Autenticado" :  "Não autenticado"));
-		
 	}
-	
+
+
+	/**
+	 * @return the idade
+	 */
 	public int getIdade() {
 		return idade;
 	}
 
 
+	/**
+	 * @param idade the idade to set
+	 */
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
 
+
+	/**
+	 * @return the cpf
+	 */
 	public String getCpf() {
 		return cpf;
 	}
 
+
+	/**
+	 * @param cpf the cpf to set
+	 */
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
+
+	/**
+	 * @return the genero
+	 */
 	public String getGenero() {
 		return genero;
 	}
 
 
+	/**
+	 * @param genero the genero to set
+	 */
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
 
 
+	/**
+	 * @return the dataNasc
+	 */
 	public Date getDataNasc() {
 		return dataNasc;
 	}
 
 
+	/**
+	 * @param dataNasc the dataNasc to set
+	 */
 	public void setDataNasc(Date dataNasc) {
 		this.dataNasc = dataNasc;
-	}	
+	}
+	
+	
 
 }

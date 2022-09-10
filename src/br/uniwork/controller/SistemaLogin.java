@@ -1,18 +1,45 @@
-package projeto;
-
+package br.uniwork.controller;
+/**
+ * Classe que implementa lógica de login
+ * @author mateus-cabral
+ * @version 1.0
+ * @deprecated
+ */
 public class SistemaLogin {
 
+	/**
+	 * Id da conta no banco de dados
+	 */
 	private int id;
+
+	/**
+	 * Verifica se a conta está logada
+	 */
 	private boolean status;
+
+	/**
+	 * Login da conta
+	 */
 	private String login;
+
+	/**
+	 * Senha da conta
+	 */
 	private String pwd;
 	
-	//construtor
+	/**
+	 * Construtor vazio
+	 */
 	public SistemaLogin() {
 		
 	}
 
-	//Login e Logout
+
+	/**
+	 * Login no sistema
+	 * @param login
+	 * @param pwd
+	 */
 	public void login(String login, String pwd) {
 		boolean verificado;
 		
@@ -27,50 +54,78 @@ public class SistemaLogin {
 		this.setStatus(verificado);
 	}
 	
+	/**
+	 * Logout
+	 */
 	public void logout() {
 		this.setStatus(false);
 	}
 
-
 	//Getters e Setters
-	public boolean isStatus() {
-		return status;
 
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
 	}
 
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	/**
+	 * @return the status
+	 */
+	public boolean isStatus() {
+		return status;
+	}
+
+
+	/**
+	 * @param status the status to set
+	 */
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
 
 
-
+	/**
+	 * @return the login
+	 */
 	public String getLogin() {
 		return login;
 	}
 
 
-
+	/**
+	 * @param login the login to set
+	 */
 	public void setLogin(String login) {
 		this.login = login;
 	}
 
 
-
+	/**
+	 * @return the pwd
+	 */
 	public String getPwd() {
 		return pwd;
 	}
 
 
-
+	/**
+	 * @param pwd the pwd to set
+	 */
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
 
-	public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 }

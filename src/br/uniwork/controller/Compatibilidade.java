@@ -1,15 +1,40 @@
-package projeto;
-
+package br.uniwork.controller;
+/**
+ * Classe que calcula a compatibilidade de um candidato com uma vaga.
+ * @author mateus-cabral
+ * @version 1.0
+ */
 import java.util.ArrayList;
 
 public class Compatibilidade {
 	
+	/**
+	 * Id da proposta no banco de dados
+	 */
 	private int idProposta;
+	
+	/**
+	 * Id da conta no banco de dados
+	 */
 	private int idConta;
+	
+	/**
+	 * Valor de compatibilidade entre candidato e vaga. Entre 0 e 1
+	 */
 	private float compatibilidade;
 	
+	/**
+	 * Construtor vazio
+	 */
+	public Compatibilidade() {
+		
+	}
 	
-	//Construtor
+	/**
+	 * Construtor parâmetrizado 
+	 * @param idProposta
+	 * @param idUser
+	 */
 	public Compatibilidade(int idProposta, int idUser) {
 		this.setIdConta(idUser);
 		this.setIdProposta(idProposta);
@@ -31,33 +56,49 @@ public class Compatibilidade {
 		}
 		this.setCompatibilidade(compat);;
 	}
-	
-	
+
 	//Getters e Setters
-	public long getIdProposta() {
+	
+	/**
+	 * @return the idProposta
+	 */
+	public int getIdProposta() {
 		return idProposta;
 	}
 
+	/**
+	 * @param idProposta the idProposta to set
+	 */
 	public void setIdProposta(int idProposta) {
 		this.idProposta = idProposta;
 	}
 
-	public long getIdConta() {
+	/**
+	 * @return the idConta
+	 */
+	public int getIdConta() {
 		return idConta;
 	}
 
+	/**
+	 * @param idConta the idConta to set
+	 */
 	public void setIdConta(int idConta) {
 		this.idConta = idConta;
 	}
 
+	/**
+	 * @return the compatibilidade
+	 */
 	public float getCompatibilidade() {
 		return compatibilidade;
 	}
 
+	/**
+	 * @param compatibilidade the compatibilidade to set
+	 */
 	public void setCompatibilidade(float compatibilidade) {
 		this.compatibilidade = compatibilidade;
 	}
-	
-	
 	
 }

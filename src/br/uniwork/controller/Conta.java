@@ -1,21 +1,67 @@
-package projeto;
+package br.uniwork.controller;
 /**
+ * Classe que abstrai Conta de usuários.
  * @author mateus-cabral
  * @version 1.0
  */
 public abstract class Conta {
 	
+	/**
+	 * Nome da conta
+	 */
 	private String nome;
+	
+	/**
+	 * Id da conta no banco de dados
+	 */
 	private int id;
+	
+	/**
+	 * Login da conta no sistema
+	 */
 	private String login;
+	
+	/**
+	 * Senha da conta no sistema
+	 */
 	private String pwd;
+	
+	/**
+	 * Email cadastrado no sistema
+	 */
 	private String email;
+	
+	/**
+	 * Celular de contato
+	 */
 	private String celular;
+	
+	/**
+	 * Se o email está verificado no sistema
+	 */
 	private boolean statusEmail;
+	
+	/**
+	 * Se a conta está ativa
+	 */
 	private boolean status;
 	
+	/**
+	 * Construtor vazio
+	 */
+	public Conta() {
+		
+	}
 	
-	//Construtor parâmetrizado
+	/**
+	 * Construtor parâmetrizado
+	 * @param nome
+	 * @param id
+	 * @param login
+	 * @param pwd
+	 * @param email
+	 * @param cel
+	 */
 	public Conta(String nome, int id, String login, String pwd, String email, String cel) {
 		this.setNome(nome);
 		this.setId(id);
@@ -28,7 +74,9 @@ public abstract class Conta {
 	}
 	
 	
-	//Verificação de email - só será autenticado caso a conta esteja ativa
+	/**
+	 * Verificação de email - só será autenticado caso a conta esteja ativa
+	 */
 	public void autenticarEmail() {
 		if(this.isStatus()) {
 			if(this.isStatusEmail()) {
@@ -43,7 +91,11 @@ public abstract class Conta {
 	}
 	
 	
-	//Fechamento de Conta
+	/**
+	 * Fechamento de Conta
+	 * @param login
+	 * @param pwd
+	 */
 	public void fecharConta(String login, String pwd) {
 		if(this.getLogin() == login && this.getPwd() == pwd){
 			this.setStatus(false);
@@ -53,7 +105,9 @@ public abstract class Conta {
 	}
 	
 	
-	//Alteração e reset de senha
+	/**
+	 * Alteração e reset de senha
+	 */
 	public void resetSenha() {
 		if(this.isStatus()) {
 			this.setPwd("Padrao");
@@ -63,6 +117,10 @@ public abstract class Conta {
 		
 	};
 	
+	/**
+	 * Alteração de senha
+	 * @param novaPwd
+	 */
 	public void alterarSenha(String novaPwd) {
 		if(this.isStatus()) {
 			this.setPwd(novaPwd);

@@ -1,7 +1,18 @@
-package projeto;
-
+package br.uniwork.view;
+/**
+ * Classe de teste para a lógica das classes.
+ * @author mateus-cabral
+ * @version 1.0
+ */
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import br.uniwork.controller.Candidato;
+import br.uniwork.controller.Curriculo;
+import br.uniwork.controller.Empresa;
+import br.uniwork.controller.Habilidade;
+import br.uniwork.controller.PropostaEmprego;
+import br.uniwork.controller.SistemaLogin;
 
 public class Main {
 	public static void main(String[] args) {
@@ -233,7 +244,7 @@ public class Main {
 							case 3:
 								for(Candidato i: c) {
 									if(i.getId() == loginS.getId()) {
-										i.getStatusConta();
+										System.out.println(i.toString());
 									}
 								}
 								break;
@@ -347,7 +358,7 @@ public class Main {
 								case 3:
 									for(Empresa i: e) {
 										if(i.getId() == loginS.getId()) {
-											i.getStatusConta();
+											System.out.println(i.toString());
 										}
 									}
 									break;
