@@ -1,5 +1,8 @@
 package projeto;
-
+/**
+ * @author mateus-cabral
+ * @version 1.0
+ */
 public class Empresa extends Conta{
 	
 	private String nome;
@@ -17,12 +20,16 @@ public class Empresa extends Conta{
 	
 	//Getters e Setters
 	@Override
-	public void getStatusConta() {
-		System.out.println("Nome: " + this.getNome() + "    " + "Celular: " + this.getCelular() + "\nLogin: " + this.getLogin() + "    " + "Senha: " + this.getPwd() + "\n" + "ID: " + this.getId() + 
-				"    " + "Email: " + this.getEmail() + "\n" + "CNPJ: " + this.getCnpj() + "\n" + 
-				"Status: " + (this.isStatus() ? "Ativa" : "Desativada"));
-		System.out.println("Status Email: " + (this.isStatusEmail() ? "Autenticado" :  "Não autenticado"));
-		System.out.println();
+	public String toString() {
+		return ("Nome: " + this.getNome() + "    " + 
+							"Celular: " + this.getCelular() + 
+							"\nLogin: " + this.getLogin() + "    " + 
+							"Senha: " + this.getPwd() + "\n" + 
+							"ID: " + this.getId() + "    " + 
+							"Email: " + this.getEmail() + "\n" + 
+							"CNPJ: " + this.getCnpj() + "\n" + 
+							"Status: " + (this.isStatus() ? "Ativa" : "Desativada") + 
+							"Status Email: " + (this.isStatusEmail() ? "Autenticado" :  "Não autenticado"));
 		
 	}
 	
