@@ -1,5 +1,8 @@
 package projeto;
-
+/**
+ * @author mateus-cabral
+ * @version 1.0
+ */
 public abstract class Conta {
 	
 	private String nome;
@@ -71,8 +74,6 @@ public abstract class Conta {
 	
 	
 	//Getters e Setters
-	public abstract void getStatusConta();
-	
 	public int getId() {
 		return id;
 	}
