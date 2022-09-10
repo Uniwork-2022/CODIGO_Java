@@ -35,16 +35,16 @@ public class Candidato extends Conta{
 	
 	//Getters e Setters
 	@Override
-	public void getStatusConta() {
-		System.out.println("Nome: " + this.getNome() + "    " + 
-							"Celular: " + this.getCelular() + 
-							"\nLogin: " + this.getLogin() + "    " + 
-							"Senha: " + this.getPwd() + "\n" + 
-							"ID: " + this.getId() + 
-							"    " + "Email: " + this.getEmail() + "\n" + 
-							"CPF: " + this.getCpf() + "\n" + 
-							"Status: " + (this.isStatus() ? "Ativa" : "Desativada") + "\n" +
-							"Status Email: " + (this.isStatusEmail() ? "Autenticado" :  "Não autenticado"));
+	public String toString() {
+		return ("Nome: " + this.getNome() + "    " + 
+				"Celular: " + this.getCelular() + 
+				"\nLogin: " + this.getLogin() + "    " + 
+				"Senha: " + this.getPwd() + "\n" + 
+				"ID: " + this.getId() + 
+				"    " + "Email: " + this.getEmail() + "\n" + 
+				"CPF: " + this.getCpf() + "\n" + 
+				"Status: " + (this.isStatus() ? "Ativa" : "Desativada") + "\n" +
+				"Status Email: " + (this.isStatusEmail() ? "Autenticado" :  "Não autenticado"));
 		
 	}
 	
