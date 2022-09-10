@@ -1,4 +1,8 @@
 package projeto;
+/**
+ * @author mateus-cabral
+ * @version 1.0
+ */
 
 import java.util.Date;
 
@@ -11,6 +15,17 @@ public class Candidato extends Conta{
 	
 	
 	//Construtor
+	/**
+	 * Construtor parâmetrizado
+	 * @param nome nome do candidato
+	 * @param id id do banco de dados
+	 * @param login login do candidato no sistema
+	 * @param pwd pwd do candidato no sistema
+	 * @param email email do candidato no sistema
+	 * @param celular celular cadastrado
+	 * @param idade idade do candidato
+	 * @param cpf cpf vinculado ao candidato
+	 */
 	public Candidato(String nome, int id, String login, String pwd, String email, String celular, int idade, String cpf) {
 		super(nome, id, login, pwd, email, celular);
 		this.setIdade(idade);
@@ -21,11 +36,15 @@ public class Candidato extends Conta{
 	//Getters e Setters
 	@Override
 	public void getStatusConta() {
-		System.out.println("Nome: " + this.getNome() + "    " + "Celular: " + this.getCelular() + "\nLogin: " + this.getLogin() + "    " + "Senha: " + this.getPwd() + "\n" + "ID: " + this.getId() + 
-							"    " + "Email: " + this.getEmail() + "\n" + "CPF: " + this.getCpf() + "\n" + 
-							"Status: " + (this.isStatus() ? "Ativa" : "Desativada"));
-		System.out.println("Status Email: " + (this.isStatusEmail() ? "Autenticado" :  "Não autenticado"));
-		System.out.println();
+		System.out.println("Nome: " + this.getNome() + "    " + 
+							"Celular: " + this.getCelular() + 
+							"\nLogin: " + this.getLogin() + "    " + 
+							"Senha: " + this.getPwd() + "\n" + 
+							"ID: " + this.getId() + 
+							"    " + "Email: " + this.getEmail() + "\n" + 
+							"CPF: " + this.getCpf() + "\n" + 
+							"Status: " + (this.isStatus() ? "Ativa" : "Desativada") + "\n" +
+							"Status Email: " + (this.isStatusEmail() ? "Autenticado" :  "Não autenticado"));
 		
 	}
 	
