@@ -14,6 +14,8 @@ public class Curriculo{
 	 */
 	private int id;
 	
+	private Candidato candidato;
+	
 	/**
 	 * Lista de habilidades do candidatoa
 	 */
@@ -29,8 +31,9 @@ public class Curriculo{
 	/**
 	 * Construtor parâmetrizado
 	 */
-	public Curriculo(int id) {
+	public Curriculo(int id, Candidato candidato) {
 		this.setId(id);
+		this.setCandidato(candidato);
 	}
 	
 	
@@ -83,6 +86,20 @@ public class Curriculo{
 	 */
 	public void setHabilidades(ArrayList<Integer> habilidades) {
 		this.habilidades = habilidades;
+	}
+
+	/**
+	 * @return the candidato
+	 */
+	public Candidato getCandidato() {
+		return candidato;
+	}
+
+	/**
+	 * @param candidato the candidato to set
+	 */
+	public void setCandidato(Candidato candidato) {
+		this.candidato = candidato;
 	}
 	
 }
