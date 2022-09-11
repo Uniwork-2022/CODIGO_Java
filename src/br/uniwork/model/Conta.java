@@ -1,4 +1,4 @@
-package br.uniwork.controller;
+package br.uniwork.model;
 /**
  * Classe que abstrai Conta de usuários.
  * @author mateus-cabral
@@ -47,6 +47,11 @@ public abstract class Conta {
 	private boolean status;
 	
 	/**
+	 * Endereco do usuário
+	 */
+	private String endereco;
+	
+	/**
 	 * Construtor vazio
 	 */
 	public Conta() {
@@ -62,7 +67,7 @@ public abstract class Conta {
 	 * @param email
 	 * @param cel
 	 */
-	public Conta(String nome, int id, String login, String pwd, String email, String cel) {
+	public Conta(String nome, int id, String login, String pwd, String email, String cel, String endereco) {
 		this.setNome(nome);
 		this.setId(id);
 		this.setLogin(login);
@@ -71,6 +76,7 @@ public abstract class Conta {
 		this.setCelular(cel);
 		this.setStatus(true);
 		this.setStatusEmail(false);
+		this.setEndereco(endereco);
 	}
 	
 	
@@ -198,6 +204,20 @@ public abstract class Conta {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	/**
+	 * @return the endereco
+	 */
+	public String getEndereco() {
+		return endereco;
+	}
+
+	/**
+	 * @param endereco the endereco to set
+	 */
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 }
