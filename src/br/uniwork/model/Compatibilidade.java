@@ -1,4 +1,4 @@
-package br.uniwork.controller;
+package br.uniwork.model;
 /**
  * Classe que calcula a compatibilidade de um candidato com uma vaga.
  * @author mateus-cabral
@@ -43,17 +43,16 @@ public class Compatibilidade {
 	
 	// Calculando a compatibilidade entre o usuário e a vaga
 	public void compatibilidade(ArrayList<Integer> skillsCandidato, ArrayList<Integer> skillsProposta) {
-		int tamanhoProposta = skillsProposta.size();
-		int tamanhoCandidato = skillsCandidato.size();
 		float compat = 0;
-		float valor = (100 / tamanhoProposta);		
-		for(int i = 0; i < tamanhoProposta; i++) {
-			for(int c = 0; c < tamanhoCandidato; c++) {
-				if(skillsCandidato.get(c) == skillsProposta.get(i)) {
+		float valor = (100 / skillsProposta.size());		
+		for (Integer i : skillsProposta) {
+			for (Integer i2 : skillsCandidato) {
+				if(i == i2) {
 					compat = compat + valor;
 				}
 			}
 		}
+		
 		this.setCompatibilidade(compat);;
 	}
 
