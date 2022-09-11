@@ -1,4 +1,4 @@
-package br.uniwork.controller;
+package br.uniwork.model;
 /**
  * Classe que abstrai Conta de empresas no sistema.
  * @author mateus-cabral
@@ -44,8 +44,8 @@ public class Empresa extends Conta{
 	 * @param cel
 	 * @param cnpj
 	 */
-	public Empresa(String nome, int id, String login, String pwd, String email, String cel, String cnpj) {
-		super(nome, id, login, pwd, email, cel);
+	public Empresa(String nome, int id, String login, String pwd, String email, String cel, String endereco, String cnpj) {
+		super(nome, id, login, pwd, email, cel, endereco);
 		this.setCnpj(cnpj);
 	}
 	

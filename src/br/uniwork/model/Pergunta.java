@@ -1,4 +1,4 @@
-package br.uniwork.controller;
+package br.uniwork.model;
 /**
  * Perguntas que serão utilizadas na classe teste.
  * @author mateus-cabral

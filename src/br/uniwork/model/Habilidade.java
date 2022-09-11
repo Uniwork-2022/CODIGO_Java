@@ -1,4 +1,4 @@
-package br.uniwork.controller;
+package br.uniwork.model;
 /**
  * Classe que abstrai as habilidades do candidato
  * @author mateus-cabral

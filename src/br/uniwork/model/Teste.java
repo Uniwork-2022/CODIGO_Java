@@ -1,4 +1,4 @@
-package br.uniwork.controller;
+package br.uniwork.model;
 /**
  * Classe que abstrai os testes (provas) que serão feitas pelo candidato
  * @author mateus-cabral

@@ -1,4 +1,4 @@
-package br.uniwork.controller;
+package br.uniwork.model;
 /**
  * Classe que abstrai o currículo do candidato, de acordo com as habilidades do sistema.
  * Deve começar sem habilidades
