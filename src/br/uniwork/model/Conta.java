@@ -136,6 +136,14 @@ public abstract class Conta {
 		
 	};
 	
+	/**
+	 * Método para enviar dados pelo DAO
+	 * @param c conta
+	 */
+	public void cadastrarConta(Conta c) {
+		
+	}
+	
 	
 	//Getters e Setters
 	public int getId() {

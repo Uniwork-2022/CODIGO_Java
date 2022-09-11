@@ -91,6 +91,14 @@ public class Teste {
 		}
 		return nota;
 	}
+	
+	/**
+	 * Método para enviar dados pelo DAO
+	 * @param teste
+	 */
+	public void cadastrarTeste(Teste teste) {
+		
+	}
 
 	
 	//Getters e Setters

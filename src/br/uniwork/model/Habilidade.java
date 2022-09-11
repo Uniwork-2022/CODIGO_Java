@@ -48,6 +48,15 @@ public class Habilidade {
 		this.setTipo(tipo);
 	}
 
+	
+	/**
+	 * Método para enviar dados pelo DAO
+	 * @param h habilidade
+	 */
+	public void cadastrarHabilidade(Habilidade h) {
+		
+	}
+	
 	//Getters e Setters
 	
 	/**

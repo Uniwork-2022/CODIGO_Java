@@ -79,6 +79,15 @@ public class Candidato extends Conta{
 				"Status: " + (this.isStatus() ? "Ativa" : "Desativada") + "\n" +
 				"Status Email: " + (this.isStatusEmail() ? "Autenticado" :  "Não autenticado"));
 	}
+	
+	/**
+	 * Método para enviar dados pelo DAO
+	 * @param candidato
+	 */
+	@Override
+	public void cadastrarConta(Conta candidato) {
+		
+	}
 
 
 

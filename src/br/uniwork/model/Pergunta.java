@@ -52,6 +52,13 @@ public class Pergunta {
 		this.respostas = respostas;
 	}
 
+	/**
+	 * Método para enviar dados pelo DAO
+	 * @param pergunta
+	 */
+	public void cadastrarPergunta(Pergunta pergunta) {
+		
+	}
 
 	//Getters e Setters
 	

@@ -64,6 +64,15 @@ public class Empresa extends Conta{
 							"Status Email: " + (this.isStatusEmail() ? "Autenticado" :  "Não autenticado"));
 		
 	}
+	
+	/**
+	 * Método para enviar dados pelo DAO
+	 * @param empresa
+	 */
+	@Override
+	public void cadastrarConta(Conta empresa) {
+		
+	}
 
 	//Getters e Setters
 	
