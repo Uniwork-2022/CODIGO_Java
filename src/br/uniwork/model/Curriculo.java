@@ -19,7 +19,7 @@ public class Curriculo{
 	/**
 	 * Lista de habilidades do candidatoa
 	 */
-	private ArrayList<Integer> habilidades = new ArrayList<Integer>();
+	private ArrayList<Habilidade> habilidades = new ArrayList<Habilidade>();
 	
 	/**
 	 * Construtor vazio
@@ -41,18 +41,16 @@ public class Curriculo{
 	 * Adiciona uma habilidade
 	 * @param idHabilidade
 	 */
-	public void addHabilidade(int idHabilidade) {
-		this.getHabilidades().add(idHabilidade);
+	public void addHabilidade(Habilidade h) {
+		this.getHabilidades().add(h);
 	}
 	
 	/**
-	 * Adiciona uma lista de habilidades 
-	 * @param idHabilidades
+	 * Método para enviar dados pelo DAO
+	 * @param cv
 	 */
-	public void addHabilidade(int[] idHabilidades) {
-		for (int i : idHabilidades) {
-			this.getHabilidades().add(i);
-		}
+	public void cadastrarCurriculo(Curriculo cv) {
+		
 	}
 
 	//Getters e Setters
@@ -76,7 +74,7 @@ public class Curriculo{
 	/**
 	 * @return the habilidades
 	 */
-	public ArrayList<Integer> getHabilidades() {
+	public ArrayList<Habilidade> getHabilidades() {
 		return habilidades;
 	}
 
@@ -84,7 +82,7 @@ public class Curriculo{
 	/**
 	 * @param habilidades the habilidades to set
 	 */
-	public void setHabilidades(ArrayList<Integer> habilidades) {
+	public void setHabilidades(ArrayList<Habilidade> habilidades) {
 		this.habilidades = habilidades;
 	}
 

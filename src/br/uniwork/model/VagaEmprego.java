@@ -42,13 +42,13 @@ public class VagaEmprego {
 	 * Lista de habilidades requisitadas
 	 * @deprecated
 	 */
-	private ArrayList<Integer> idHabilidade = new ArrayList<Integer>();
+	private ArrayList<Habilidade> habilidades = new ArrayList<Habilidade>();
 	
 	/**
 	 * Lista de candidatos candidatados
 	 * @deprecated
 	 */
-	private ArrayList<Integer> idCandidatos = new ArrayList<Integer>();
+	private ArrayList<Candidato> candidatos = new ArrayList<Candidato>();
 	
 	/**
 	 * Verifica se a proposta está ativa
@@ -73,20 +73,28 @@ public class VagaEmprego {
 	 * @param local String
 	 * @param skills ArrayList<Integer>
 	 */
-	public VagaEmprego(int idVaga, int idEmpresa, String nomeCargo, String descritivo, double salario, String local, ArrayList<Integer> skills) {
+	public VagaEmprego(int idVaga, int idEmpresa, String nomeCargo, String descritivo, double salario, String local, ArrayList<Habilidade> skills) {
 		this.setIdVaga(idVaga);
 		this.setIdEmpresa(idEmpresa);
 		this.setNomeCargo(nomeCargo);
 		this.setDescritivo(descritivo);
 		this.setSalario(salario);
 		this.setLocal(local);
-		this.setIdHabilidade(skills);
+		this.setHabilidades(skills);
 		this.setStatus(true);
 	}
 	
 	//Cadastro de usuários
-	public void candidatar(int idCandidato) {
-		this.getIdCandidatos().add(idCandidato);
+	public void candidatar(Candidato c) {
+		this.getCandidatos().add(c);
+	}
+	
+	/**
+	 * Método para enviar dados pelo DAO
+	 * @param vaga
+	 */
+	public void cadastrarVaga(VagaEmprego vaga) {
+		
 	}
 	
 	
@@ -183,33 +191,34 @@ public class VagaEmprego {
 	}
 
 	/**
-	 * @return the idHabilidade
+	 * @return the habilidades
 	 */
-	public ArrayList<Integer> getIdHabilidade() {
-		return idHabilidade;
+	public ArrayList<Habilidade> getHabilidades() {
+		return habilidades;
 	}
 
 	/**
-	 * @param idHabilidade the idHabilidade to set
+	 * @param habilidades the habilidades to set
 	 */
-	public void setIdHabilidade(ArrayList<Integer> idHabilidade) {
-		this.idHabilidade = idHabilidade;
+	public void setHabilidades(ArrayList<Habilidade> habilidades) {
+		this.habilidades = habilidades;
 	}
 
 	/**
-	 * @return the idCandidatos
+	 * @return the candidatos
 	 */
-	public ArrayList<Integer> getIdCandidatos() {
-		return idCandidatos;
+	public ArrayList<Candidato> getCandidatos() {
+		return candidatos;
 	}
 
 	/**
-	 * @param idCandidatos the idCandidatos to set
+	 * @param candidatos the candidatos to set
 	 */
-	public void setIdCandidatos(ArrayList<Integer> idCandidatos) {
-		this.idCandidatos = idCandidatos;
+	public void setCandidatos(ArrayList<Candidato> candidatos) {
+		this.candidatos = candidatos;
 	}
 
+	
 	/**
 	 * @return the status
 	 */
