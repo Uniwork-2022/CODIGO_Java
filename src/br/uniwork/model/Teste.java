@@ -25,15 +25,15 @@ public class Teste {
 	/**
 	 * Lista de perguntas do teste
 	 */
-	public ArrayList<String> perguntas = new ArrayList<String>();
+	public ArrayList<Pergunta> perguntas = new ArrayList<Pergunta>();
 	
 	/**
 	 * Lista de Usuários que fizeram o teste
 	 */
-	public ArrayList<Integer> idUser = new ArrayList<Integer>();
+	public Candidato candidato = new Candidato();
 	
 	/**
-	 * Lista de respostas de um candidato
+	 * Lista de respostas de um candidato, será armazenado acerto ou erro
 	 */
 	public ArrayList<Boolean> userResposta = new ArrayList<Boolean>();
 	
@@ -57,29 +57,26 @@ public class Teste {
 	
 	//Adiciona o acerto ou erro do usuário à uma lista
 	public void responder(int respostaUser, int resposta) {
-		boolean certo;
 		if (respostaUser == resposta) {
-			certo = true;
-			this.getUserResposta().add(certo);
+			this.getUserResposta().add(true);
 			System.out.println("Correto");
 			
 		} else {
-			certo = false;
-			this.getUserResposta().add(certo);
-			System.out.println("Errado");
+			this.getUserResposta().add(false);
+			System.out.println("Incorreto");
 		}
 	}
 	
 	
-	// Cadastro de usuarios
-	public void cadastrarUser(int idUser) {
-		this.getIdUser().add(idUser);
+	// Cadastro de usuario
+	public void cadastrarUser(Candidato user) {
+		this.setCandidato(user);;
 	}
 	
 	
 	// Cadastro de perguntas
-	public void cadastrarPergunta(String idPergunta) {
-		this.getPerguntas().add(idPergunta);
+	public void cadastrarPergunta(Pergunta pergunta) {
+		this.getPerguntas().add(pergunta);
 	}
 	
 
@@ -87,9 +84,9 @@ public class Teste {
 	public float calcularNota() {
 		float nota = 0;
 		float valor = 10 / this.getPerguntas().size();
-		for (int i = 0; i < this.getUserResposta().size();i++) {
-			if(this.getUserResposta().get(i)) {
-				nota += valor;
+		for(Boolean r : userResposta) {
+			if(r) {
+				nota+= valor;
 			}
 		}
 		return nota;
@@ -127,6 +124,20 @@ public class Teste {
 	}
 
 	/**
+	 * @return the candidato
+	 */
+	public Candidato getCandidato() {
+		return candidato;
+	}
+
+	/**
+	 * @param candidato the candidato to set
+	 */
+	public void setCandidato(Candidato candidato) {
+		this.candidato = candidato;
+	}
+
+	/**
 	 * @return the tipoTestes
 	 */
 	public String getTipoTestes() {
@@ -143,30 +154,17 @@ public class Teste {
 	/**
 	 * @return the perguntas
 	 */
-	public ArrayList<String> getPerguntas() {
+	public ArrayList<Pergunta> getPerguntas() {
 		return perguntas;
 	}
 
 	/**
 	 * @param perguntas the perguntas to set
 	 */
-	public void setPerguntas(ArrayList<String> perguntas) {
+	public void setPerguntas(ArrayList<Pergunta> perguntas) {
 		this.perguntas = perguntas;
 	}
 
-	/**
-	 * @return the idUser
-	 */
-	public ArrayList<Integer> getIdUser() {
-		return idUser;
-	}
-
-	/**
-	 * @param idUser the idUser to set
-	 */
-	public void setIdUser(ArrayList<Integer> idUser) {
-		this.idUser = idUser;
-	}
 
 	/**
 	 * @return the userResposta
