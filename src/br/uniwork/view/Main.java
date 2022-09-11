@@ -3,16 +3,20 @@ package br.uniwork.view;
  * Classe de teste para a lógica das classes.
  * @author mateus-cabral
  * @version 1.0
+ * @deprecated
  */
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import br.uniwork.controller.Candidato;
-import br.uniwork.controller.Curriculo;
-import br.uniwork.controller.Empresa;
-import br.uniwork.controller.Habilidade;
-import br.uniwork.controller.PropostaEmprego;
 import br.uniwork.controller.SistemaLogin;
+import br.uniwork.model.Candidato;
+import br.uniwork.model.Conta;
+import br.uniwork.model.Curriculo;
+import br.uniwork.model.Empresa;
+import br.uniwork.model.Habilidade;
+import br.uniwork.model.VagaEmprego;
+
 
 public class Main {
 	public static void main(String[] args) {
@@ -40,16 +44,16 @@ public class Main {
 		sk.add(js.getId());
 		sk.add(bd.getId());
 		
-		PropostaEmprego p1 = new PropostaEmprego(1, 1, "Desenvolvedor Jr.", "Desenvolvimento de sites e portais internos da empresa", 2500, "Coca", sk);
-		PropostaEmprego p2 = new PropostaEmprego(2, 2, "Cientista de Dados", "Administração e análise dos dados da empresa", 2500, "IBM", sk);
-		PropostaEmprego p3 = new PropostaEmprego(3, 3, "Analista Jr.", "Análista de requisitos dos projetos da empresa", 2500, "Loreal", sk);
-		PropostaEmprego p4 = new PropostaEmprego(4, 4, "Desenvolvedor Sr.", "Desenvolvimento de sites e portais internos da empresa", 5500, "Samsung", sk);
+		VagaEmprego p1 = new VagaEmprego(1, 1, "Desenvolvedor Jr.", "Desenvolvimento de sites e portais internos da empresa", 2500, "Coca", sk);
+		VagaEmprego p2 = new VagaEmprego(2, 2, "Cientista de Dados", "Administração e análise dos dados da empresa", 2500, "IBM", sk);
+		VagaEmprego p3 = new VagaEmprego(3, 3, "Analista Jr.", "Análista de requisitos dos projetos da empresa", 2500, "Loreal", sk);
+		VagaEmprego p4 = new VagaEmprego(4, 4, "Desenvolvedor Sr.", "Desenvolvimento de sites e portais internos da empresa", 5500, "Samsung", sk);
 		
 		//Instanciando listas para armazenar as contas criadas
 		ArrayList<Candidato> c = new ArrayList<Candidato>();
 		ArrayList<Curriculo> cv = new ArrayList<Curriculo>();
 		ArrayList<Empresa> e = new ArrayList<Empresa>();		
-		ArrayList<PropostaEmprego> pe = new ArrayList<PropostaEmprego>();
+		ArrayList<VagaEmprego> pe = new ArrayList<VagaEmprego>();
 		pe.add(p1);
 		pe.add(p2);
 		pe.add(p3);
@@ -85,9 +89,9 @@ public class Main {
 					System.out.println("Agora digite a senha desejada: ");
 					String pwd = input.next();
 					
-					Candidato cc = new Candidato(nome, id, login, pwd, email, celular, idade, cpf);
+//					Candidato cc = new Candidato(nome, id, login, pwd, email, celular, idade, cpf, cpf);
 					id += 1;
-					c.add(cc);
+//					c.add(cc);
 					break;
 				case 2:
 					System.out.println("Vamos começar o processo de cadastro! \nDigite o nome da Empresa: ");
@@ -108,9 +112,9 @@ public class Main {
 					System.out.println("Agora digite a senha desejada: ");
 					String pwdE = input.next();
 					
-					Empresa ee = new Empresa(nomeE, id, loginE, pwdE, emailE, celularE, cnpj);
+//					Empresa ee = new Empresa(nomeE, id, loginE, pwdE, emailE, celularE, cnpj);
 					id += 1;
-					e.add(ee);
+//					e.add(ee);
 					System.out.println();
 					break;
 				default:
@@ -201,7 +205,7 @@ public class Main {
 							}
 							break;
 						case 3:
-							for(PropostaEmprego pp : pe) {
+							for(VagaEmprego pp : pe) {
 								System.out.println(pp.getIdProposta() + " Cargo: " + pp.getNomeCargo() + "\nDescrição: " + pp.getDescritivo());
 								for(int i: pp.getIdCandidatos()) {
 									if(i == loginS.getId()) {
@@ -329,7 +333,7 @@ public class Main {
 									skill = input.nextInt();
 								}
 								
-								PropostaEmprego p = new PropostaEmprego(idP, loginS.getId(), nomeP, descritivo, sal, local, hd);
+								VagaEmprego p = new VagaEmprego(idP, loginS.getId(), nomeP, descritivo, sal, local, hd);
 								pe.add(p);
 								idP += 1;
 								break;
