@@ -1,4 +1,4 @@
-package br.uniwork.controller;
+package br.uniwork.model;
 /**
  * Classe que abstrai candidatos do sistema.
  * @author mateus-cabral
@@ -9,14 +9,19 @@ import java.util.Date;
 
 public class Candidato extends Conta{
 	/**
-	 * Idade do candidato
+	 * Idade do candidato - não será mais utilizado
 	 */
-	private int idade;
+//	private int idade;
 	
 	/**
 	 * Cpf do candidato
 	 */
 	private String cpf;
+	
+	/**
+	 * Número do RG
+	 */
+	private String rg;
 	
 	/**
 	 * Gênero do candidato
@@ -27,6 +32,13 @@ public class Candidato extends Conta{
 	 * Data de nascimento
 	 */
 	private Date dataNasc;
+	
+	/**
+	 * Currículo do usuário
+	 */
+	private Curriculo cv;
+	
+
 	
 	
 	/**
@@ -47,10 +59,10 @@ public class Candidato extends Conta{
 	 * @param idade idade do candidato
 	 * @param cpf cpf vinculado ao candidato
 	 */
-	public Candidato(String nome, int id, String login, String pwd, String email, String celular, int idade, String cpf) {
-		super(nome, id, login, pwd, email, celular);
-		this.setIdade(idade);
+	public Candidato(String nome, int id, String login, String pwd, String email, String celular, String endereco, String cpf, String rg) {
+		super(nome, id, login, pwd, email, celular, endereco);
 		this.setCpf(cpf);
+		this.setRg(rg);
 	}
 	
 	
@@ -61,28 +73,13 @@ public class Candidato extends Conta{
 				"Celular: " + this.getCelular() + 
 				"\nLogin: " + this.getLogin() + "    " + 
 				"Senha: " + this.getPwd() + "\n" + 
-				"ID: " + this.getId() + 
-				"    " + "Email: " + this.getEmail() + "\n" + 
+				"ID: " + this.getId() + "    " + 
+				"Email: " + this.getEmail() + "\n" + 
 				"CPF: " + this.getCpf() + "\n" + 
 				"Status: " + (this.isStatus() ? "Ativa" : "Desativada") + "\n" +
 				"Status Email: " + (this.isStatusEmail() ? "Autenticado" :  "Não autenticado"));
 	}
 
-
-	/**
-	 * @return the idade
-	 */
-	public int getIdade() {
-		return idade;
-	}
-
-
-	/**
-	 * @param idade the idade to set
-	 */
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
 
 
 	/**
@@ -130,6 +127,34 @@ public class Candidato extends Conta{
 	 */
 	public void setDataNasc(Date dataNasc) {
 		this.dataNasc = dataNasc;
+	}
+
+	/**
+	 * @return the cv
+	 */
+	public Curriculo getCv() {
+		return cv;
+	}
+
+	/**
+	 * @param cv the cv to set
+	 */
+	public void setCv(Curriculo cv) {
+		this.cv = cv;
+	}
+
+	/**
+	 * @return the rg
+	 */
+	public String getRg() {
+		return rg;
+	}
+
+	/**
+	 * @param rg the rg to set
+	 */
+	public void setRg(String rg) {
+		this.rg = rg;
 	}
 	
 	
