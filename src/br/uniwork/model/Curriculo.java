@@ -21,6 +21,8 @@ public class Curriculo{
 	 */
 	private ArrayList<Habilidade> habilidades = new ArrayList<Habilidade>();
 	
+	private String objetivoProfissional;
+	
 	/**
 	 * Construtor vazio
 	 */
@@ -98,6 +100,20 @@ public class Curriculo{
 	 */
 	public void setCandidato(Candidato candidato) {
 		this.candidato = candidato;
+	}
+
+	/**
+	 * @return the objetivoProfissional
+	 */
+	public String getObjetivoProfissional() {
+		return objetivoProfissional;
+	}
+
+	/**
+	 * @param objetivoProfissional the objetivoProfissional to set
+	 */
+	public void setObjetivoProfissional(String objetivoProfissional) {
+		this.objetivoProfissional = objetivoProfissional;
 	}
 	
 }

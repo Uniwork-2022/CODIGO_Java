@@ -26,6 +26,8 @@ public class Empresa extends Conta{
 	 */
 	private float trust;
 	
+	private String redeSocial;
+	
 	
 	/**
 	 * Construtor vazio
@@ -130,6 +132,20 @@ public class Empresa extends Conta{
 	 */
 	public void setTrust(float trust) {
 		this.trust = trust;
+	}
+
+	/**
+	 * @return the redeSocial
+	 */
+	public String getRedeSocial() {
+		return redeSocial;
+	}
+
+	/**
+	 * @param redeSocial the redeSocial to set
+	 */
+	public void setRedeSocial(String redeSocial) {
+		this.redeSocial = redeSocial;
 	}
 	
 	
