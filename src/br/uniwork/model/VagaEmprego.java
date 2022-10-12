@@ -6,6 +6,9 @@ package br.uniwork.model;
  */
 import java.util.ArrayList;
 
+import br.uniwork.model.vo.CandidatoVO;
+import br.uniwork.model.vo.HabilidadeVO;
+
 public class VagaEmprego {
 	
 	/**
@@ -24,17 +27,17 @@ public class VagaEmprego {
 	private String nomeCargo;
 	
 	/**
-	 * Descrição do comportamento e responsabilidades esperados
+	 * Descriï¿½ï¿½o do comportamento e responsabilidades esperados
 	 */
 	private String descritivo;
 	
 	/**
-	 * Salário
+	 * Salï¿½rio
 	 */
 	private double salario;
 	
 	/**
-	 * Localização do cargo
+	 * Localizaï¿½ï¿½o do cargo
 	 */
 	private String local;
 	
@@ -42,16 +45,16 @@ public class VagaEmprego {
 	 * Lista de habilidades requisitadas
 	 * @deprecated
 	 */
-	private ArrayList<Habilidade> habilidades = new ArrayList<Habilidade>();
+	private ArrayList<HabilidadeVO> habilidades = new ArrayList<HabilidadeVO>();
 	
 	/**
 	 * Lista de candidatos candidatados
 	 * @deprecated
 	 */
-	private ArrayList<Candidato> candidatos = new ArrayList<Candidato>();
+	private ArrayList<CandidatoVO> candidatos = new ArrayList<CandidatoVO>();
 	
 	/**
-	 * Verifica se a proposta está ativa
+	 * Verifica se a proposta estï¿½ ativa
 	 * @deprecated
 	 */
 	private boolean status;
@@ -64,7 +67,7 @@ public class VagaEmprego {
 	}
 	
 	/**
-	 * Construtor parâmetrizado
+	 * Construtor parï¿½metrizado
 	 * @param idProposta int
 	 * @param idEmpresa int
 	 * @param nomeCargo String
@@ -73,7 +76,7 @@ public class VagaEmprego {
 	 * @param local String
 	 * @param skills ArrayList<Integer>
 	 */
-	public VagaEmprego(int idVaga, int idEmpresa, String nomeCargo, String descritivo, double salario, String local, ArrayList<Habilidade> skills) {
+	public VagaEmprego(int idVaga, int idEmpresa, String nomeCargo, String descritivo, double salario, String local, ArrayList<HabilidadeVO> skills) {
 		this.setIdVaga(idVaga);
 		this.setIdEmpresa(idEmpresa);
 		this.setNomeCargo(nomeCargo);
@@ -84,13 +87,13 @@ public class VagaEmprego {
 		this.setStatus(true);
 	}
 	
-	//Cadastro de usuários
-	public void candidatar(Candidato c) {
+	//Cadastro de usuï¿½rios
+	public void candidatar(CandidatoVO c) {
 		this.getCandidatos().add(c);
 	}
 	
 	/**
-	 * Método para enviar dados pelo DAO
+	 * Mï¿½todo para enviar dados pelo DAO
 	 * @param vaga
 	 */
 	public void cadastrarVaga(VagaEmprego vaga) {
@@ -193,28 +196,28 @@ public class VagaEmprego {
 	/**
 	 * @return the habilidades
 	 */
-	public ArrayList<Habilidade> getHabilidades() {
+	public ArrayList<HabilidadeVO> getHabilidades() {
 		return habilidades;
 	}
 
 	/**
 	 * @param habilidades the habilidades to set
 	 */
-	public void setHabilidades(ArrayList<Habilidade> habilidades) {
+	public void setHabilidades(ArrayList<HabilidadeVO> habilidades) {
 		this.habilidades = habilidades;
 	}
 
 	/**
 	 * @return the candidatos
 	 */
-	public ArrayList<Candidato> getCandidatos() {
+	public ArrayList<CandidatoVO> getCandidatos() {
 		return candidatos;
 	}
 
 	/**
 	 * @param candidatos the candidatos to set
 	 */
-	public void setCandidatos(ArrayList<Candidato> candidatos) {
+	public void setCandidatos(ArrayList<CandidatoVO> candidatos) {
 		this.candidatos = candidatos;
 	}
 

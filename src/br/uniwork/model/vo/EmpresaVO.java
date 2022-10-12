@@ -1,10 +1,13 @@
-package br.uniwork.model;
+package br.uniwork.model.vo;
+
+import br.uniwork.model.Conta;
+
 /**
  * Classe que abstrai Conta de empresas no sistema.
  * @author mateus-cabral
  * @version 1.0
  */
-public class Empresa extends Conta{
+public class EmpresaVO extends Conta{
 	
 	/**
 	 * Nome da empresa
@@ -32,7 +35,7 @@ public class Empresa extends Conta{
 	/**
 	 * Construtor vazio
 	 */
-	public Empresa() {
+	public EmpresaVO() {
 
 	}
 	
@@ -46,7 +49,7 @@ public class Empresa extends Conta{
 	 * @param cel
 	 * @param cnpj
 	 */
-	public Empresa(String nome, int id, String login, String pwd, String email, String cel, String endereco, String cnpj) {
+	public EmpresaVO(String nome, int id, String login, String pwd, String email, String cel, String endereco, String cnpj) {
 		super(nome, id, login, pwd, email, cel, endereco);
 		this.setCnpj(cnpj);
 	}

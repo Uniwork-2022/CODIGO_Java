@@ -1,12 +1,12 @@
-package br.uniwork.model;
+package br.uniwork.model.vo;
+
 /**
  * Classe que calcula a compatibilidade de um candidato com uma vaga.
  * @author mateus-cabral
  * @version 1.0
  */
-import java.util.ArrayList;
 
-public class Compatibilidade {
+public class CompatibilidadeVO {
 	
 	/**
 	 * Id da proposta no banco de dados
@@ -26,7 +26,7 @@ public class Compatibilidade {
 	/**
 	 * Construtor vazio
 	 */
-	public Compatibilidade() {
+	public CompatibilidadeVO() {
 		
 	}
 	
@@ -35,27 +35,13 @@ public class Compatibilidade {
 	 * @param idProposta
 	 * @param idUser
 	 */
-	public Compatibilidade(int idProposta, int idUser) {
+	public CompatibilidadeVO(int idProposta, int idUser) {
 		this.setIdConta(idUser);
 		this.setIdProposta(idProposta);
 	}
 	
 	
-	// Calculando a compatibilidade entre o usuário e a vaga
-	public void compatibilidade(ArrayList<Integer> skillsCandidato, ArrayList<Integer> skillsProposta) {
-		float compat = 0;
-		float valor = (100 / skillsProposta.size());		
-		for (Integer i : skillsProposta) {
-			for (Integer i2 : skillsCandidato) {
-				if(i == i2) {
-					compat = compat + valor;
-				}
-			}
-		}
-		
-		this.setCompatibilidade(compat);;
-	}
-
+	
 	//Getters e Setters
 	
 	/**

@@ -1,10 +1,10 @@
-package br.uniwork.model;
+package br.uniwork.model.vo;
 /**
  * Perguntas que serão utilizadas na classe teste.
  * @author mateus-cabral
  * @version 1.0
  */
-public class Pergunta {
+public class PerguntaVO {
 
 	/**
 	 * Id da pergunta no banco de dados
@@ -31,7 +31,7 @@ public class Pergunta {
 	 */
 	private int[] respostas;
 
-	public Pergunta() {
+	public PerguntaVO() {
 		
 	}
 	
@@ -43,7 +43,7 @@ public class Pergunta {
 	 * @param alternativas String[]
 	 * @param respostas int[]
 	 */
-	public Pergunta(int idPergunta, String descricao, String tipo, String[] alternativas, int[] respostas) {
+	public PerguntaVO(int idPergunta, String descricao, String tipo, String[] alternativas, int[] respostas) {
 		super();
 		this.idPergunta = idPergunta;
 		this.descricao = descricao;
@@ -56,7 +56,7 @@ public class Pergunta {
 	 * Método para enviar dados pelo DAO
 	 * @param pergunta
 	 */
-	public void cadastrarPergunta(Pergunta pergunta) {
+	public void cadastrarPergunta(PerguntaVO pergunta) {
 		
 	}
 

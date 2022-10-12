@@ -1,10 +1,13 @@
 package br.uniwork.model;
+
+import br.uniwork.controller.SistemaLogin;
+
 /**
  * Classe que abstrai Conta de usuários.
  * @author mateus-cabral
  * @version 1.0
  */
-public abstract class Conta {
+public abstract class Conta implements SistemaLogin{
 	
 	/**
 	 * Nome da conta
@@ -77,6 +80,17 @@ public abstract class Conta {
 		this.setStatus(true);
 		this.setStatusEmail(false);
 		this.setEndereco(endereco);
+	}
+	
+	public Conta(String nome, int id, String login, String pwd, String email, String cel) {
+		this.setNome(nome);
+		this.setId(id);
+		this.setLogin(login);
+		this.setPwd(pwd);
+		this.setEmail(email);
+		this.setCelular(cel);
+		this.setStatus(true);
+		this.setStatusEmail(false);
 	}
 	
 	
