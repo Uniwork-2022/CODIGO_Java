@@ -44,7 +44,25 @@ public class CandidatoDAO {
 		ps.execute();
 	}
 	
-	public void get() throws SQLException {
+	public CandidatoVO get(int id) throws SQLException {	
+		String sql = "SELECT FROM T_UW_USUARIO WHERE ID_USUARIO = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, id);
+		ResultSet rs = ps.executeQuery();
+		String nome = rs.getString(1);
+		String rg = rs.getString(2);
+		int cpf = rs.getInt(3);
+		int celular = rs.getInt(4);
+		Date dt_nascimento = rs.getDate(5);
+		String email = rs.getString(6);
+		String genero = rs.getString(7);
+		String login = rs.getString(8);
+		String senha = rs.getString(9);
+		CandidatoVO cv = new CandidatoVO(nome, id, login, senha, email, Integer.toString(celular), cpf, rg, genero, dt_nascimento);
+		return cv;
+	}
+	
+	public List<CandidatoVO> get() throws SQLException {
 		List<CandidatoVO> candidatos = new ArrayList<CandidatoVO>();
 		
 		String sql = "SELECT * FROM T_UW_USUARIO";
@@ -63,10 +81,41 @@ public class CandidatoDAO {
 			String login = rs.getString(9);
 			String senha = rs.getString(10);
 			
-			candidatos.add(new CandidatoVO(nome, id, login, senha, email, celular, cpf, rg));
+			candidatos.add(new CandidatoVO(nome, id, login, senha, email, Integer.toString(celular), cpf, rg));
 			
 		}
 		
+		return candidatos;
+		
+	}
+	
+	public void update(int id, String novoNome) throws SQLException {
+		String sql = "UPDATE T_UW_USUARIO SET NM_USUARIO = ? WHERE ID_USUARIO = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, novoNome);
+		ps.setInt(2, id);
+		ps.execute();
+	}
+	
+	public void updatePwd(int id, String novaSenha) throws SQLException {
+		String sql = "UPDATE T_UW_USUARIO SET NM_SENHA = ? WHERE ID_USUARIO = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, novaSenha);
+		ps.setInt(2, id);
+		ps.execute();
+	}
+	
+	
+	
+	public void delete(int id) throws SQLException {
+		String sql = "DELETE FROM T_UW_USUARIO WHERE ID = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, id);
+		ps.execute();
+	}
+	
+	public void encerrarConexao() throws SQLException {
+		conn.close();
 	}
 
 }
