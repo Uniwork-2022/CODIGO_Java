@@ -38,7 +38,7 @@ public class EmpresaVO extends Conta{
 	public EmpresaVO() {
 
 	}
-	
+
 	/**
 	 * Construtor parâmetrizado
 	 * @param nome
