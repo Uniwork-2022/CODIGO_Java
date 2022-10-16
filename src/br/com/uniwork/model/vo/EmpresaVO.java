@@ -18,7 +18,7 @@ public class EmpresaVO extends Conta{
 	/**
 	 * Cnpj vinculado à empresa
 	 */
-	private String cnpj;
+	private Long cnpj;
 	
 	/**
 	 * Valor de confiabilidade da empresa
@@ -45,12 +45,11 @@ public class EmpresaVO extends Conta{
 	 * @param cel
 	 * @param cnpj
 	 */
-	public EmpresaVO(String nome, int id, String login, String pwd, String email, String cel, String endereco, String cnpj) {
-		super(nome, id, login, pwd, email, cel, endereco);
+	public EmpresaVO(String nome, int id, String login, String pwd, String email, long cel, String endereco, long cnpj) {
+		super(nome, id, login, pwd, email, (long) cel, endereco);
 		this.setCnpj(cnpj);
 	}
-	
-	
+
 	//Getters e Setters
 	@Override
 	public String toString() {
@@ -65,14 +64,16 @@ public class EmpresaVO extends Conta{
 							"Status Email: " + (this.isStatusEmail() ? "Autenticado" :  "Não autenticado"));
 		
 	}
+
 	
-	/**
-	 * Método para enviar dados pelo DAO
-	 * @param empresa
-	 */
 	@Override
-	public void cadastrarConta(Conta empresa) {
-		
+	public boolean login(String login, String pwd) {
+		return false;
+	}
+
+	@Override
+	public boolean logout() {
+		return false;
 	}
 
 	//Getters e Setters
@@ -108,14 +109,14 @@ public class EmpresaVO extends Conta{
 	/**
 	 * @return the cnpj
 	 */
-	public String getCnpj() {
+	public Long getCnpj() {
 		return cnpj;
 	}
 
 	/**
 	 * @param cnpj the cnpj to set
 	 */
-	public void setCnpj(String cnpj) {
+	public void setCnpj(Long cnpj) {
 		this.cnpj = cnpj;
 	}
 
@@ -146,6 +147,8 @@ public class EmpresaVO extends Conta{
 	public void setRedeSocial(String redeSocial) {
 		this.redeSocial = redeSocial;
 	}
+
+
 	
 	
 }
