@@ -19,9 +19,9 @@ public class CompatibilidadeVO {
 	private int idConta;
 	
 	/**
-	 * Valor de compatibilidade entre candidato e vaga. Entre 0 e 1
+	 * Valor de compatibilidade entre candidato e vaga. Entre 0 e 100
 	 */
-	private float compatibilidade;
+	private int compatibilidade;
 	
 	/**
 	 * Construtor vazio
@@ -75,14 +75,14 @@ public class CompatibilidadeVO {
 	/**
 	 * @return the compatibilidade
 	 */
-	public float getCompatibilidade() {
+	public int getCompatibilidade() {
 		return compatibilidade;
 	}
 
 	/**
 	 * @param compatibilidade the compatibilidade to set
 	 */
-	public void setCompatibilidade(float compatibilidade) {
+	public void setCompatibilidade(int compatibilidade) {
 		this.compatibilidade = compatibilidade;
 	}
 	
