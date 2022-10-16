@@ -6,6 +6,8 @@ package br.uniwork.model.vo;
  */
 import java.util.ArrayList;
 
+
+
 public class VagaEmpregoVO {
 	
 	/**

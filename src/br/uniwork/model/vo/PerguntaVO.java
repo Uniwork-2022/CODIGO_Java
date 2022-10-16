@@ -1,9 +1,12 @@
 package br.uniwork.model.vo;
+
 /**
- * Perguntas que serão utilizadas na classe teste.
- * @author mateus-cabral
+ * Classe que abstrai uma pergunta de teste
+ * @author Mateus Cabral
  * @version 1.0
  */
+
+
 public class PerguntaVO {
 
 	/**

@@ -1,12 +1,14 @@
 package br.uniwork.model.vo;
 
-import br.uniwork.model.Conta;
-
 /**
  * Classe que abstrai Conta de empresas no sistema.
  * @author mateus-cabral
  * @version 1.0
  */
+
+import br.uniwork.model.Conta;
+
+
 public class EmpresaVO extends Conta{
 	
 	/**
