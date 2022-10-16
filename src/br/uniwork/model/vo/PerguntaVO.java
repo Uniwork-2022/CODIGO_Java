@@ -24,7 +24,7 @@ public class PerguntaVO {
 	/**
 	 * Lista de perguntas
 	 */
-	private String[] alternativas;
+	private String alternativas;
 
 	/**
 	 * Lista com as respostas corretas
@@ -43,7 +43,7 @@ public class PerguntaVO {
 	 * @param alternativas String[]
 	 * @param respostas int[]
 	 */
-	public PerguntaVO(int idPergunta, String descricao, String tipo, String[] alternativas, int[] respostas) {
+	public PerguntaVO(int idPergunta, String descricao, String tipo, String alternativas, int[] respostas) {
 		super();
 		this.idPergunta = idPergunta;
 		this.descricao = descricao;
@@ -52,13 +52,6 @@ public class PerguntaVO {
 		this.respostas = respostas;
 	}
 
-	/**
-	 * Método para enviar dados pelo DAO
-	 * @param pergunta
-	 */
-	public void cadastrarPergunta(PerguntaVO pergunta) {
-		
-	}
 
 	//Getters e Setters
 	
@@ -107,14 +100,14 @@ public class PerguntaVO {
 	/**
 	 * @return the alternativas
 	 */
-	public String[] getAlternativas() {
+	public String getAlternativas() {
 		return alternativas;
 	}
 
 	/**
 	 * @param alternativas the alternativas to set
 	 */
-	public void setAlternativas(String[] alternativas) {
+	public void setAlternativas(String alternativas) {
 		this.alternativas = alternativas;
 	}
 
