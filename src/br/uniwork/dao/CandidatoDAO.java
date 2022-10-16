@@ -12,8 +12,8 @@ import br.uniwork.model.Factory.ConectionFactory;
 import br.uniwork.model.vo.CandidatoVO;
 /**
  * Classe que gerencia a as operações de CRUD da classe Candidato
- * @see #CandidatoVO()
- * @see #CandidatoBO()
+ * @see #CandidatoVO
+ * @see #CandidatoBO
  * @author Mateus Cabral
  * @version 1.0
  */
@@ -106,16 +106,16 @@ public class CandidatoDAO {
 		ResultSet rs = ps.executeQuery();
 		
 		while(rs.next()) {
-			int id = rs.getInt(1);
-			String nome = rs.getString(2);
-			String rg = rs.getString(3);
-			int cpf = rs.getInt(4);
-			int celular = rs.getInt(5);
-			Date dt_nascimento = rs.getDate(6);
-			String email = rs.getString(7);
-			String genero = rs.getString(8);
-			String login = rs.getString(9);
-			String senha = rs.getString(10);
+			int id = rs.getInt("id_usuario");
+			String nome = rs.getString("nm_usuario");
+			String rg = rs.getString("nr_rg");
+			int cpf = rs.getInt("nr_cpf");
+			int celular = rs.getInt("nr_celular");
+			Date dt_nascimento = rs.getDate("dt_nascimento");
+			String email = rs.getString("ds_email");
+			String genero = rs.getString("fl_genero");
+			String login = rs.getString("ds_username");
+			String senha = rs.getString("ds_senha");
 			
 			candidatos.add(new CandidatoVO(nome, id, login, senha, email, Integer.toString(celular), cpf, rg));
 			
