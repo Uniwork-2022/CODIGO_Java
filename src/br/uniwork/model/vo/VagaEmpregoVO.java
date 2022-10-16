@@ -18,7 +18,7 @@ public class VagaEmpregoVO {
 	/**
 	 * Id da empresa no banco de dados
 	 */
-	private EmpresaVO Empresa;
+	private int idEmpresa;
 	
 	/**
 	 * Nome do cargo
@@ -34,6 +34,8 @@ public class VagaEmpregoVO {
 	 * Salário
 	 */
 	private double salario;
+	
+	private String beneficios;
 	
 	/**
 	 * Localização do cargo
@@ -74,15 +76,16 @@ public class VagaEmpregoVO {
 	 * @param local String
 	 * @param skills ArrayList<Integer>
 	 */
-	public VagaEmpregoVO(int idVaga, EmpresaVO Empresa, String nomeCargo, String descritivo, double salario, String local, ArrayList<HabilidadeVO> skills) {
+	public VagaEmpregoVO(int idVaga, int idEmpresa, String nomeCargo, String descritivo, double salario, String local, ArrayList<HabilidadeVO> skills, String beneficios) {
 		this.setIdVaga(idVaga);
-		this.setEmpresa(Empresa);
+		this.setEmpresa(idEmpresa);
 		this.setNomeCargo(nomeCargo);
 		this.setDescritivo(descritivo);
 		this.setSalario(salario);
 		this.setLocal(local);
 		this.setHabilidades(skills);
 		this.setStatus(true);
+		this.setBeneficios(beneficios);
 	}
 	
 	//Cadastro de usuários
@@ -124,15 +127,15 @@ public class VagaEmpregoVO {
 	/**
 	 * @return the empresa
 	 */
-	public EmpresaVO getEmpresa() {
-		return Empresa;
+	public int getEmpresa() {
+		return idEmpresa;
 	}
 
 	/**
 	 * @param empresa the empresa to set
 	 */
-	public void setEmpresa(EmpresaVO empresa) {
-		Empresa = empresa;
+	public void setEmpresa(int empresa) {
+		idEmpresa = empresa;
 	}
 	
 	/**
@@ -232,6 +235,20 @@ public class VagaEmpregoVO {
 	 */
 	public void setStatus(boolean status) {
 		this.status = status;
+	}
+
+	/**
+	 * @return the beneficios
+	 */
+	public String getBeneficios() {
+		return beneficios;
+	}
+
+	/**
+	 * @param beneficios the beneficios to set
+	 */
+	public void setBeneficios(String beneficios) {
+		this.beneficios = beneficios;
 	}
 
 }
