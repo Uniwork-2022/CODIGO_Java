@@ -1,3 +1,4 @@
+package br.com.uniwork.view;
 //package br.uniwork.view;
 ///**
 // * Classe de teste para a lógica das classes.

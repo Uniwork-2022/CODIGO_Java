@@ -1,8 +1,9 @@
-package br.uniwork.controller;
+package br.com.uniwork.controller;
 /**
  * Classe que implementa lógica de login
  * @author mateus-cabral
  * @version 1.0
+ * @deprecated
  */
 public interface SistemaLogin {
 

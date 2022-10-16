@@ -1,55 +1,64 @@
-package br.uniwork.model;
+package br.com.uniwork.model.vo;
+
 /**
  * Classe que abstrai os testes (provas) que serão feitas pelo candidato
  * @author mateus-cabral
  * @version 1.0
  */
+
+
 import java.util.ArrayList;
 
-public class Teste {
+public class TesteVO {
 	/**
 	 * ID do teste no banco de dados
 	 */
 	private int idTeste;
+	
 	
 	/**
 	 * Nome do teste
 	 */
 	private String nome;
 	
+	
 	/**
 	 * Tipo/Categoria do teste
 	 */
 	private String tipoTestes;
 	
+	
 	/**
 	 * Lista de perguntas do teste
 	 */
-	public ArrayList<Pergunta> perguntas = new ArrayList<Pergunta>();
+	private ArrayList<PerguntaVO> perguntas = new ArrayList<PerguntaVO>();
+	
 	
 	/**
 	 * Lista de Usuários que fizeram o teste
 	 */
-	public Candidato candidato = new Candidato();
+	private CandidatoVO candidato = new CandidatoVO();
+	
 	
 	/**
 	 * Lista de respostas de um candidato, será armazenado acerto ou erro
 	 */
-	public ArrayList<Boolean> userResposta = new ArrayList<Boolean>();
+	private ArrayList<Boolean> userResposta = new ArrayList<Boolean>();
+	
 	
 	/**
 	 * Construtor vazio
 	 */
-	public Teste() {
+	public TesteVO() {
 		
 	}
 	
 	/**
-	 * Construtor parâmetrizado
+	 * Construtor parametrizado
 	 * @param id
 	 * @param nome
 	 */
-	public Teste(int id, String nome) {
+	public TesteVO(int id, String nome) {
 		this.setIdTeste(id);
 		this.setNome(nome);
 	}
@@ -69,34 +78,23 @@ public class Teste {
 	
 	
 	// Cadastro de usuario
-	public void cadastrarUser(Candidato user) {
+	public void cadastrarUser(CandidatoVO user) {
 		this.setCandidato(user);;
 	}
 	
 	
 	// Cadastro de perguntas
-	public void cadastrarPergunta(Pergunta pergunta) {
+	public void cadastrarPergunta(PerguntaVO pergunta) {
 		this.getPerguntas().add(pergunta);
 	}
 	
 
-	// Calcula a nota baseado na lista de respostas
-	public float calcularNota() {
-		float nota = 0;
-		float valor = 10 / this.getPerguntas().size();
-		for(Boolean r : userResposta) {
-			if(r) {
-				nota+= valor;
-			}
-		}
-		return nota;
-	}
 	
 	/**
 	 * Método para enviar dados pelo DAO
 	 * @param teste
 	 */
-	public void cadastrarTeste(Teste teste) {
+	public void cadastrarTeste(TesteVO teste) {
 		
 	}
 
@@ -134,14 +132,14 @@ public class Teste {
 	/**
 	 * @return the candidato
 	 */
-	public Candidato getCandidato() {
+	public CandidatoVO getCandidato() {
 		return candidato;
 	}
 
 	/**
 	 * @param candidato the candidato to set
 	 */
-	public void setCandidato(Candidato candidato) {
+	public void setCandidato(CandidatoVO candidato) {
 		this.candidato = candidato;
 	}
 
@@ -162,14 +160,14 @@ public class Teste {
 	/**
 	 * @return the perguntas
 	 */
-	public ArrayList<Pergunta> getPerguntas() {
+	public ArrayList<PerguntaVO> getPerguntas() {
 		return perguntas;
 	}
 
 	/**
 	 * @param perguntas the perguntas to set
 	 */
-	public void setPerguntas(ArrayList<Pergunta> perguntas) {
+	public void setPerguntas(ArrayList<PerguntaVO> perguntas) {
 		this.perguntas = perguntas;
 	}
 

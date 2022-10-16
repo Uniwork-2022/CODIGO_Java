@@ -1,4 +1,4 @@
-package br.uniwork.model;
+package br.com.uniwork.model.vo;
 /**
  * Classe que abstrai uma proposta de emprego dentro do sistema.
  * @author mateus-cabral
@@ -6,7 +6,8 @@ package br.uniwork.model;
  */
 import java.util.ArrayList;
 
-public class VagaEmprego {
+
+public class VagaEmpregoVO {
 	
 	/**
 	 * Id da proposta no banco de dados
@@ -33,6 +34,8 @@ public class VagaEmprego {
 	 */
 	private double salario;
 	
+	private String beneficios;
+	
 	/**
 	 * Localização do cargo
 	 */
@@ -40,15 +43,14 @@ public class VagaEmprego {
 	
 	/**
 	 * Lista de habilidades requisitadas
-	 * @deprecated
 	 */
-	private ArrayList<Habilidade> habilidades = new ArrayList<Habilidade>();
+	private ArrayList<HabilidadeVO> habilidades = new ArrayList<HabilidadeVO>();
 	
 	/**
 	 * Lista de candidatos candidatados
 	 * @deprecated
 	 */
-	private ArrayList<Candidato> candidatos = new ArrayList<Candidato>();
+	private ArrayList<CandidatoVO> candidatos = new ArrayList<CandidatoVO>();
 	
 	/**
 	 * Verifica se a proposta está ativa
@@ -59,12 +61,12 @@ public class VagaEmprego {
 	/**
 	 * Construtor vazio
 	 */
-	public VagaEmprego() {
+	public VagaEmpregoVO() {
 		
 	}
 	
 	/**
-	 * Construtor parâmetrizado
+	 * Construtor parametrizado
 	 * @param idProposta int
 	 * @param idEmpresa int
 	 * @param nomeCargo String
@@ -73,19 +75,32 @@ public class VagaEmprego {
 	 * @param local String
 	 * @param skills ArrayList<Integer>
 	 */
-	public VagaEmprego(int idVaga, int idEmpresa, String nomeCargo, String descritivo, double salario, String local, ArrayList<Habilidade> skills) {
+	public VagaEmpregoVO(int idVaga, int idEmpresa, String nomeCargo, String descritivo, double salario, String local, ArrayList<HabilidadeVO> skills, String beneficios) {
 		this.setIdVaga(idVaga);
-		this.setIdEmpresa(idEmpresa);
+		this.setEmpresa(idEmpresa);
 		this.setNomeCargo(nomeCargo);
 		this.setDescritivo(descritivo);
 		this.setSalario(salario);
 		this.setLocal(local);
 		this.setHabilidades(skills);
 		this.setStatus(true);
+		this.setBeneficios(beneficios);
+	}
+	
+	public VagaEmpregoVO(int idVaga, int idEmpresa, String nomeCargo, String descritivo, double salario, String local, String beneficios) {
+		setIdVaga(idVaga);
+		setEmpresa(idEmpresa);
+		setNomeCargo(nomeCargo);
+		setDescritivo(descritivo);
+		setSalario(salario);
+		setLocal(local);
+		setHabilidades(habilidades);
+		setStatus(true);
+		setBeneficios(beneficios);
 	}
 	
 	//Cadastro de usuários
-	public void candidatar(Candidato c) {
+	public void candidatar(CandidatoVO c) {
 		this.getCandidatos().add(c);
 	}
 	
@@ -93,7 +108,7 @@ public class VagaEmprego {
 	 * Método para enviar dados pelo DAO
 	 * @param vaga
 	 */
-	public void cadastrarVaga(VagaEmprego vaga) {
+	public void cadastrarVaga(VagaEmpregoVO vaga) {
 		
 	}
 	
@@ -121,19 +136,19 @@ public class VagaEmprego {
 	}
 
 	/**
-	 * @return the idEmpresa
+	 * @return the empresa
 	 */
-	public int getIdEmpresa() {
+	public int getEmpresa() {
 		return idEmpresa;
 	}
 
 	/**
-	 * @param idEmpresa the idEmpresa to set
+	 * @param empresa the empresa to set
 	 */
-	public void setIdEmpresa(int idEmpresa) {
-		this.idEmpresa = idEmpresa;
+	public void setEmpresa(int empresa) {
+		idEmpresa = empresa;
 	}
-
+	
 	/**
 	 * @return the nomeCargo
 	 */
@@ -193,28 +208,28 @@ public class VagaEmprego {
 	/**
 	 * @return the habilidades
 	 */
-	public ArrayList<Habilidade> getHabilidades() {
+	public ArrayList<HabilidadeVO> getHabilidades() {
 		return habilidades;
 	}
 
 	/**
 	 * @param habilidades the habilidades to set
 	 */
-	public void setHabilidades(ArrayList<Habilidade> habilidades) {
+	public void setHabilidades(ArrayList<HabilidadeVO> habilidades) {
 		this.habilidades = habilidades;
 	}
 
 	/**
 	 * @return the candidatos
 	 */
-	public ArrayList<Candidato> getCandidatos() {
+	public ArrayList<CandidatoVO> getCandidatos() {
 		return candidatos;
 	}
 
 	/**
 	 * @param candidatos the candidatos to set
 	 */
-	public void setCandidatos(ArrayList<Candidato> candidatos) {
+	public void setCandidatos(ArrayList<CandidatoVO> candidatos) {
 		this.candidatos = candidatos;
 	}
 
@@ -231,6 +246,20 @@ public class VagaEmprego {
 	 */
 	public void setStatus(boolean status) {
 		this.status = status;
+	}
+
+	/**
+	 * @return the beneficios
+	 */
+	public String getBeneficios() {
+		return beneficios;
+	}
+
+	/**
+	 * @param beneficios the beneficios to set
+	 */
+	public void setBeneficios(String beneficios) {
+		this.beneficios = beneficios;
 	}
 
 }

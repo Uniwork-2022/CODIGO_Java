@@ -1,10 +1,9 @@
-package br.uniwork.model;
-/**
- * Classe que abstrai Conta de empresas no sistema.
- * @author mateus-cabral
- * @version 1.0
- */
-public class Empresa extends Conta{
+package br.com.uniwork.model.vo;
+
+import br.com.uniwork.model.Conta;
+
+
+public class EmpresaVO extends Conta{
 	
 	/**
 	 * Nome da empresa
@@ -19,7 +18,7 @@ public class Empresa extends Conta{
 	/**
 	 * Cnpj vinculado à empresa
 	 */
-	private String cnpj;
+	private Long cnpj;
 	
 	/**
 	 * Valor de confiabilidade da empresa
@@ -32,10 +31,10 @@ public class Empresa extends Conta{
 	/**
 	 * Construtor vazio
 	 */
-	public Empresa() {
+	public EmpresaVO() {
 
 	}
-	
+
 	/**
 	 * Construtor parâmetrizado
 	 * @param nome
@@ -46,12 +45,11 @@ public class Empresa extends Conta{
 	 * @param cel
 	 * @param cnpj
 	 */
-	public Empresa(String nome, int id, String login, String pwd, String email, String cel, String endereco, String cnpj) {
-		super(nome, id, login, pwd, email, cel, endereco);
+	public EmpresaVO(String nome, int id, String login, String pwd, String email, long cel, String endereco, long cnpj) {
+		super(nome, id, login, pwd, email, (long) cel, endereco);
 		this.setCnpj(cnpj);
 	}
-	
-	
+
 	//Getters e Setters
 	@Override
 	public String toString() {
@@ -66,14 +64,16 @@ public class Empresa extends Conta{
 							"Status Email: " + (this.isStatusEmail() ? "Autenticado" :  "Não autenticado"));
 		
 	}
+
 	
-	/**
-	 * Método para enviar dados pelo DAO
-	 * @param empresa
-	 */
 	@Override
-	public void cadastrarConta(Conta empresa) {
-		
+	public boolean login(String login, String pwd) {
+		return false;
+	}
+
+	@Override
+	public boolean logout() {
+		return false;
 	}
 
 	//Getters e Setters
@@ -109,14 +109,14 @@ public class Empresa extends Conta{
 	/**
 	 * @return the cnpj
 	 */
-	public String getCnpj() {
+	public Long getCnpj() {
 		return cnpj;
 	}
 
 	/**
 	 * @param cnpj the cnpj to set
 	 */
-	public void setCnpj(String cnpj) {
+	public void setCnpj(Long cnpj) {
 		this.cnpj = cnpj;
 	}
 
@@ -147,6 +147,8 @@ public class Empresa extends Conta{
 	public void setRedeSocial(String redeSocial) {
 		this.redeSocial = redeSocial;
 	}
+
+
 	
 	
 }

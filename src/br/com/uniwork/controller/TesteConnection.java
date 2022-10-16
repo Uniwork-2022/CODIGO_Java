@@ -1,4 +1,4 @@
-package br.uniwork.controller;
+package br.com.uniwork.controller;
 
 public class TesteConnection {
 

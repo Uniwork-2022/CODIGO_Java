@@ -1,10 +1,10 @@
-package br.uniwork.model;
+package br.com.uniwork.model.vo;
 /**
  * Classe que abstrai as habilidades do candidato
  * @author mateus-cabral
  * @version 1.0
  */
-public class Habilidade {
+public class HabilidadeVO {
 	
 	/**
 	 * Id da habilidade no sistema
@@ -30,7 +30,7 @@ public class Habilidade {
 	/**
 	 * Construtor vazio
 	 */
-	public Habilidade() {
+	public HabilidadeVO() {
 		
 	}
 	 
@@ -41,7 +41,7 @@ public class Habilidade {
 	 * @param descricao
 	 * @param tipo
 	 */
-	public Habilidade(int id, String nome, String descricao, String tipo) {
+	public HabilidadeVO(int id, String nome, String descricao, String tipo) {
 		this.setDescricao(descricao);
 		this.setId(id);
 		this.setNome(nome);
@@ -53,7 +53,7 @@ public class Habilidade {
 	 * Método para enviar dados pelo DAO
 	 * @param h habilidade
 	 */
-	public void cadastrarHabilidade(Habilidade h) {
+	public void cadastrarHabilidade(HabilidadeVO h) {
 		
 	}
 	
@@ -95,7 +95,7 @@ public class Habilidade {
 	}
 
 	/**
-	 * @param descricao the descricao to set
+	 * @param descricao the descrição to set
 	 */
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;

@@ -1,10 +1,13 @@
-package br.uniwork.model;
+package br.com.uniwork.model;
+
+import br.com.uniwork.model.interfaces.SistemaLogin;
+
 /**
  * Classe que abstrai Conta de usuários.
  * @author mateus-cabral
  * @version 1.0
  */
-public abstract class Conta {
+public abstract class Conta implements SistemaLogin{
 	
 	/**
 	 * Nome da conta
@@ -34,7 +37,7 @@ public abstract class Conta {
 	/**
 	 * Celular de contato
 	 */
-	private String celular;
+	private Long celular;
 	
 	/**
 	 * Se o email está verificado no sistema
@@ -67,7 +70,7 @@ public abstract class Conta {
 	 * @param email
 	 * @param cel
 	 */
-	public Conta(String nome, int id, String login, String pwd, String email, String cel, String endereco) {
+	public Conta(String nome, int id, String login, String pwd, String email, Long cel, String endereco) {
 		this.setNome(nome);
 		this.setId(id);
 		this.setLogin(login);
@@ -77,6 +80,17 @@ public abstract class Conta {
 		this.setStatus(true);
 		this.setStatusEmail(false);
 		this.setEndereco(endereco);
+	}
+	
+	public Conta(String nome, int id, String login, String pwd, String email, Long cel) {
+		this.setNome(nome);
+		this.setId(id);
+		this.setLogin(login);
+		this.setPwd(pwd);
+		this.setEmail(email);
+		this.setCelular(cel);
+		this.setStatus(true);
+		this.setStatusEmail(false);
 	}
 	
 	
@@ -195,12 +209,12 @@ public abstract class Conta {
 	}
 
 
-	public String getCelular() {
+	public Long getCelular() {
 		return celular;
 	}
 
 
-	public void setCelular(String celular) {
+	public void setCelular(Long celular) {
 		this.celular = celular;
 	}
 
